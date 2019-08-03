@@ -18,25 +18,20 @@
 <body ng-controller="PermissionAppCtrl">
     <div class="container">
         <h1 class="p-3 mb-2 bg-light text-dark">Permission</h1>
-        <p class="p-3 mb-2 bg-light text-dark">{{test}}</p>
+        <p class="p-3 mb-2 bg-light text-dark">{{data}}</p>
         
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="check1" checked>
-            <label class="form-check-label" for="check1">
-            Check All
-            </label>
+        <p>Sections</p>
+        <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">1</label>
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="check2" disabled>
-            <label class="form-check-label" for="check2">
-            View
-            </label>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">2</label>
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="check3">
-            <label class="form-check-label" for="check3">
-            Check All
-            </label>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+        <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
         </div>
         
         
@@ -56,8 +51,10 @@
         <!--<input ng-model="" type="checkbox" name="" id="checkFourteenFifteen">-->
         <!--<input ng-model="" type="checkbox" name="" id="checkFifteen">-->
 
+        
+
         <!--Повинно бути прив'язано до  LocalStorage! Після натискання дані зберігаються у LocalStorage-->
-        <button type="button" class="btn btn-primary">Save</button>
+        <button ng-click="clickHandler()" type="button" class="btn btn-primary">Save</button>
    </div>
 </body>
 </html>
