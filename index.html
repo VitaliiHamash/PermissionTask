@@ -19,30 +19,31 @@
     <div class="container">
         <h1 class="p-3 mb-2 bg-light text-dark">Permission</h1>
 
+        <input type="checkbox" ng-model="CheckboxData[0].permission.chechOne" >
+        <label>Check all</label>
+        <input type="checkbox" ng-model="CheckboxData[0].permission.chechTwo" ng-disabled="!CheckboxData.all">
+        <label>Check all</label>
+        <input type="checkbox" ng-model="CheckboxData[0].permission.chechThree" ng-disabled="!CheckboxData.all">
+        <label>Check all</label><br/>
+        
+        <input type="checkbox" ng-model="CheckboxData[1].permission.view" ng-change="changeHandler()">
+        <label>View</label>
+        <input type="checkbox" ng-model="CheckboxData[1].permission.edit" ng-disabled="!CheckboxData[1].permission.view" ng-change="changeHandler()"><label>Edit</label>
+        <input type="checkbox" ng-model="CheckboxData[1].permission.remove" ng-disabled="!CheckboxData[1].permission.edit" ng-change="changeHandler()"><label>Remove</label><br/>
+
+        <input type="checkbox" ng-model="CheckboxData[2].permission.view" ng-change="changeHandler()"><label>View</label>
+        <input type="checkbox" ng-model="CheckboxData[2].permission.edit"   ng-disabled="!CheckboxData[2].permission.view" ng-change="changeHandler()"><label>Edit</label>
+        <input type="checkbox" ng-model="CheckboxData[2].permission.remove" ng-disabled="!CheckboxData[2].permission.edit" ng-change="changeHandler()"><label>Remove</label><br/>
+
+        <input type="checkbox" ng-model="CheckboxData[3].permission.view" ng-change="changeHandler()"><label>View</label>
+        <input type="checkbox" ng-model="CheckboxData[3].permission.edit"   ng-disabled="!CheckboxData[3].permission.view" ng-change="changeHandler()"><label>Edit</label>
+        <input type="checkbox" ng-model="CheckboxData[3].permission.remove" ng-disabled="!CheckboxData[3].permission.edit" ng-change="changeHandler()"><label>Remove</label><br/>
+
+        <input type="checkbox" ng-model="CheckboxData[4].permission.view" ng-change="changeHandler()"><label>View</label>
+        <input type="checkbox" ng-model="CheckboxData[4].permission.edit"   ng-disabled="!CheckboxData[4].permission.view" ng-change="changeHandler()"><label>Edit</label>
+        <input type="checkbox" ng-model="CheckboxData[4].permission.remove" ng-disabled="!CheckboxData[4].permission.edit" ng-change="changeHandler()"><label>Remove</label><br/>
         
         
-        
-        
-        
-        <label>Click me to toggle: <input type="checkbox" ng-model="checked"></label><br/>
-<button ng-model="button" ng-disabled="checked">Button</button>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-       
-       
-       
-       
-       
-       
-       
-       
         <!--Повинно бути прив'язано до  LocalStorage! Після натискання дані зберігаються у LocalStorage-->
         <button ng-click="clickHandler()" type="button" class="btn btn-primary">Save</button>
    </div>

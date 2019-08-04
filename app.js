@@ -13,21 +13,20 @@ var PermissionApp = angular.module("PermissionApp", []);
 // Контролер
 PermissionApp.controller("CheckboxCtrl", ['$scope',  function ($scope) {
     
-    $scope.data = model;
-
+    $scope.CheckboxData = model;
+    $scope.all = false;
+    
     //Check All Activation
-    for (var i = 1; i < arr.length; i++){
-        if ($scope.Model[i].permission = {
-        view : true,
-        edit : true,
-        remove : true,
-        }){
-            //Check All 2 and 3 Activation !!!; $scope.checked = true;
-        };
-    }
+    $scope.changeHandler = function() {
+    
+        for (var i = 1; i < $scope.CheckboxData.length; i++){
+            if ($scope.CheckboxData[i].permission.view == true & $scope.CheckboxData[i].permission.edit == true & $scope.CheckboxData[i].permission.remove == true){
+                $scope.all = true;
+            }else{$scope.all = false;}
+        }
+    };
 }]);
-
-
+     
 
 
 
