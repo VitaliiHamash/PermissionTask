@@ -61,7 +61,7 @@ PermissionApp.controller("CheckboxCtrl", ['$scope',  function ($scope) {
                 $scope.CheckboxData[3].permission.remove = false;
                 $scope.CheckboxData[4].permission.remove = false;
             }
-        }
+    }
 
 
     //Check All Activation
@@ -77,9 +77,9 @@ PermissionApp.controller("CheckboxCtrl", ['$scope',  function ($scope) {
     
     
     //Save data to LocalStorage
-     /*$scope.SaveHandler = function(){
-         $scope.CheckboxData
-     }*/
+     $scope.clickHandler = function(){
+        localStorage.setItem("SaveData", JSON.stringify($scope.CheckboxData));    
+    }
     
 
 
