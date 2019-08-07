@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Permission Page</title>
-    
+    <link rel="stylesheet" href="build\main.css">
     <!--Bootstrap.min.css-->
     <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
     
@@ -18,40 +18,70 @@
 <body ng-controller="CheckboxCtrl">
     <div class="container">
         <h1 class="p-3 mb-2 bg-light text-dark">Permission</h1>
-        <input type="checkbox" ng-model="CheckboxData[0].permission.chechOne" ng-change="changeAllOne()">
-        <label>Check all</label>
-        <input type="checkbox" ng-model="CheckboxData[0].permission.chechTwo" ng-disabled="!CkeckAll" ng-change="changeAllTwo()">
-        <label>Check all</label>
-        <input type="checkbox" ng-model="CheckboxData[0].permission.chechThree" ng-disabled="!CkeckAll" ng-change="changeAllThree()">
-        <label>Check all</label><br/>
-        
-        <input type="checkbox" ng-model="CheckboxData[1].permission.view" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechOne">
-        <label>View</label>
-        
-        <input type="checkbox" ng-model="CheckboxData[1].permission.edit" ng-disabled="!CheckboxData[1].permission.view" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechTwo">
-        <label>Edit</label>
-        <input type="checkbox" ng-model="CheckboxData[1].permission.remove" ng-disabled="!CheckboxData[1].permission.edit" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechThree">
-        <label>Remove</label><br/>
+        <div class="pl-table">
+                        <div class="pl-thead">
+                            <div class="row">
+                                <div class="col">Permission settings below to set the level of access for each team member</div>
+                            </div>
+                        </div>
+                        <div class="pl-tbody">
+                            <div class="row">
+                                
+                                <div class="col">Sectios</div>
+                                <div class="col"><input type="checkbox" ng-model="CheckboxData[0].permission.chechOne" ng-change="changeAllOne()">
+                                <label>Check all</label></div>
+                                <div class="col"><input type="checkbox" ng-model="CheckboxData[0].permission.chechTwo" ng-disabled="!CkeckAll" ng-change="changeAllTwo()">
+                                <label>Check all</label></div>
+                                <div class="col"><input type="checkbox" ng-model="CheckboxData[0].permission.chechThree" ng-disabled="!CkeckAll" ng-change="changeAllThree()">
+                                <label>Check all</label>
+                            </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col">Calendar</div>
+                                <div class="col"><input type="checkbox" ng-model="CheckboxData[1].permission.view" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechOne">
+                                <label>View</label></div>
+                                <div class="col"><input type="checkbox" ng-model="CheckboxData[1].permission.edit" ng-disabled="!CheckboxData[1].permission.view" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechTwo">
+                                <label>Edit</label></div>
+                                <div class="col"><input type="checkbox" ng-model="CheckboxData[1].permission.remove" ng-disabled="!CheckboxData[1].permission.edit" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechThree">
+                                <label>Remove</label></div>
+                            </div>
+                            
+                            <div class="row">
+                                    <div class="col">Profile</div>
+                                    <div class="col"><input type="checkbox" ng-model="CheckboxData[2].permission.view" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechOne">
+                                    <label>View</label></div>
+                                    <div class="col"><input type="checkbox" ng-model="CheckboxData[2].permission.edit"   ng-disabled="!CheckboxData[2].permission.view" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechTwo">
+                                        <label>Edit</label></div>
+                                    <div class="col"><input type="checkbox" ng-model="CheckboxData[2].permission.remove" ng-disabled="!CheckboxData[2].permission.edit" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechThree">
+                                    <label>Remove</label></div>
+                            </div>
 
-        <input type="checkbox" ng-model="CheckboxData[2].permission.view" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechOne"><label>View</label>
-        <input type="checkbox" ng-model="CheckboxData[2].permission.edit"   ng-disabled="!CheckboxData[2].permission.view" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechTwo">
-        <label>Edit</label>
-        <input type="checkbox" ng-model="CheckboxData[2].permission.remove" ng-disabled="!CheckboxData[2].permission.edit" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechThree">
-        <label>Remove</label><br/>
+                            <div class="row">
+                                    <div class="col">Property</div>
+                                    <div class="col"><input type="checkbox" ng-model="CheckboxData[3].permission.view" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechOne">
+                                    <label>View</label></div>
+                                    <div class="col"><input type="checkbox" ng-model="CheckboxData[3].permission.edit"   ng-disabled="!CheckboxData[3].permission.view" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechTwo">
+                                    <label>Edit</label></div>
+                                    <div class="col"><input type="checkbox" ng-model="CheckboxData[3].permission.remove" ng-disabled="!CheckboxData[3].permission.edit" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechThree">
+                                    <label>Remove</label></div>
+                                   
+                            </div>
 
-        <input type="checkbox" ng-model="CheckboxData[3].permission.view" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechOne">
-        <label>View</label>
-        <input type="checkbox" ng-model="CheckboxData[3].permission.edit"   ng-disabled="!CheckboxData[3].permission.view" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechTwo">
-        <label>Edit</label>
-        <input type="checkbox" ng-model="CheckboxData[3].permission.remove" ng-disabled="!CheckboxData[3].permission.edit" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechThree">
-        <label>Remove</label><br/>
+                            <div class="row">
+                                    <div class="col">Contacts</div>
+                                    <div class="col"><input type="checkbox" ng-model="CheckboxData[4].permission.view" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechOne">
+                                    <label>View</label></div>
+                                    <div class="col"><input type="checkbox" ng-model="CheckboxData[4].permission.edit"   ng-disabled="!CheckboxData[4].permission.view" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechTwo">
+                                    <label>Edit</label></div>
+                                    <div class="col"><input type="checkbox" ng-model="CheckboxData[4].permission.remove" ng-disabled="!CheckboxData[4].permission.edit" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechThree">
+                                    <label>Remove</label><br/></div>
+                            </div>
 
-        <input type="checkbox" ng-model="CheckboxData[4].permission.view" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechOne">
-        <label>View</label>
-        <input type="checkbox" ng-model="CheckboxData[4].permission.edit"   ng-disabled="!CheckboxData[4].permission.view" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechTwo">
-        <label>Edit</label>
-        <input type="checkbox" ng-model="CheckboxData[4].permission.remove" ng-disabled="!CheckboxData[4].permission.edit" ng-change="changeHandler()" ng-checked="CheckboxData[0].permission.chechThree">
-        <label>Remove</label><br/>
+
+
+                        </div>
+        </div>
         
         
         <!--Повинно бути прив'язано до  LocalStorage! Після натискання дані зберігаються у LocalStorage-->
