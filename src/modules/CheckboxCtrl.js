@@ -1,3 +1,5 @@
+
+
 //Model import
 var model = require('./model.js');
 
@@ -61,10 +63,9 @@ var PermissionApp = angular.module("PermissionApp", []);
 
     //Check All Activation
     $scope.changeHandler = function() {
-        var j;
-        for (j in $scope.CheckboxData){
-            if ($scope.CheckboxData[j].permission.view == true && $scope.CheckboxData[j].permission.edit == true && $scope.CheckboxData[j].permission.remove == true){
-                $scope.CkeckAll = true;
+        for (var i = 1; i < $scope.CheckboxData.length; i++){
+            if ($scope.CheckboxData[i].permission.view === "true" && $scope.CheckboxData[i].permission.edit === "true" && $scope.CheckboxData[i].permission.remove === "true"){
+                $scope.CkeckAll = "true";
             }
         }
     };

@@ -11,10 +11,13 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-watch": "^5.0.1",
-    "watch": "^1.0.2"
+    "watch": "^1.0.2",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
